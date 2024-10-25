@@ -28,6 +28,24 @@ function addTodo() {
   deleteBtn.textContent = "Delete";
   deleteBtn.className = "text-red-500 hover:underline";
   deleteBtn.addEventListener("click", () => deleteTodo(todoItem));
+
+
+
+  todoItem.appendChild(todoContent);
+  todoItem.appendChild(editBtn);
+  todoItem.appendChild(deleteBtn);
+
+  // Add the new item to the list and clear input
+  todoList.appendChild(todoItem);
+  todoInput.value = "";
+}
+
+function editTodo(todoItem, todoContent) {
+  const originalText = todoContent.textContent;
+  const editInput = document.createElement("input");
+  editInput.type = "text";
+  editInput.value = originalText;
+  editInput.className = "border p-1 rounded w-full mr-2 focus:outline-none focus:ring focus:border-indigo-500";
   
     
   }
