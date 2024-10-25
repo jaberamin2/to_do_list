@@ -35,7 +35,6 @@ function addTodo() {
   todoItem.appendChild(editBtn);
   todoItem.appendChild(deleteBtn);
 
-  // Add the new item to the list and clear input
   todoList.appendChild(todoItem);
   todoInput.value = "";
 }
@@ -48,4 +47,10 @@ function editTodo(todoItem, todoContent) {
   editInput.className = "border p-1 rounded w-full mr-2 focus:outline-none focus:ring focus:border-indigo-500";
   
     
+
+
+  const saveEdit = () => {
+    todoContent.textContent = editInput.value.trim() || originalText;
+    todoItem.replaceChild(todoContent, editInput);
+  };
   }
