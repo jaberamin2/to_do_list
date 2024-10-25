@@ -58,11 +58,13 @@ function editTodo(todoItem, todoContent) {
   todoItem.replaceChild(editInput, todoContent);
   editInput.focus();
 
-  // Save edit on Enter key
   editInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") saveEdit();
   });
 
-  // Save edit on blur
   editInput.addEventListener("blur", saveEdit);
+  }
+
+  function deleteTodo(todoItem) {
+    todoList.removeChild(todoItem);
   }
