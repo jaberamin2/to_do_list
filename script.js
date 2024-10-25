@@ -21,6 +21,13 @@ function addTodo() {
   editBtn.textContent = "Edit";
   editBtn.className = "text-indigo-500 hover:underline mr-2";
   editBtn.addEventListener("click", () => editTodo(todoItem, todoContent));
+
+
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.className = "text-red-500 hover:underline";
+  deleteBtn.addEventListener("click", () => deleteTodo(todoItem));
   
     
   }
