@@ -53,4 +53,16 @@ function editTodo(todoItem, todoContent) {
     todoContent.textContent = editInput.value.trim() || originalText;
     todoItem.replaceChild(todoContent, editInput);
   };
+
+
+  todoItem.replaceChild(editInput, todoContent);
+  editInput.focus();
+
+  // Save edit on Enter key
+  editInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") saveEdit();
+  });
+
+  // Save edit on blur
+  editInput.addEventListener("blur", saveEdit);
   }
